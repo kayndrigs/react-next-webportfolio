@@ -1,11 +1,19 @@
 'use client';
 import CountUp from 'react-countup';
-i
 
-const Badge = ({containerStyles, icon, endCountNum, endCountText, badgeTest}) => {
+const Badge = ({containerStyles, icon, endCountNum, endCountText, badgeText}) => {
   return (
-    <div className={`badge ${containerStyles}`}>Badge</div>
+    <div className={`badge ${containerStyles}`}>
+      <div className='text-3xl text-primary'>{icon}</div>
+      <div className='flex items-center gap-x-2'>
+        <div className='text-4xl leading-none font-bold text-primary'>
+          <CountUp end={endCountNum} delay={1} duration={4} />
+          {endCountText}
+        </div>
+        <div className='max-w-[70px] test-[15px] font-medium text-black'>{badgeText}</div>
+      </div>
+    </div>
   )
 }
 
-export default Badge
+export default Badge;
